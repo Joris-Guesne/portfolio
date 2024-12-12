@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@import url("./variables.scss");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* Passage de la police de 16px par défaut, à 10px -----> 10/16*100= 62.5 */
+}
+
+body {
+  margin: 0;
+  font-size: 18px; /* On remet le body à 16px, la valeur par défaut */
+  background-color: #f2f0e3;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid #000;
+  background: rgb(242, 240, 227);
+  background: linear-gradient(180deg, rgb(242, 240, 227) 0%, rgba(242, 240, 227, 0.5) 100%);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: 0px 9.9px 20px rgba(0, 0, 0, 0.2);
+}
+header .logo-zone {
+  display: flex;
+  align-items: center;
+}
+header .fa-bars {
+  font-size: 4rem;
+  margin: 2rem;
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding: 1em;
+}
+
+h1 {
+  font-family: "Junicode";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 3em;
+  color: #202020;
+  text-align: center;
+}
+h1 span {
+  font-style: italic;
+}
+
+.logo-site {
+  width: 3em;
+  margin: 1rem;
+}
+
+.joris-gif {
+  width: 15em;
+  border-radius: 0.5em;
+  box-shadow: 0px 1.9px 2.2px rgba(0, 0, 0, 0.2), 0px 4.7px 5.3px rgba(0, 0, 0, 0.028), 0px 8.8px 10px rgba(0, 0, 0, 0.1);
+}
+
+a,
+p {
+  font-family: "LiberationSans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #202020;
+}/*# sourceMappingURL=index.css.map */
