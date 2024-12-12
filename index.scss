@@ -1,16 +1,17 @@
-@import url("./variables.scss");
+@use "./assets/css/variables.scss";
 * {
   box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%; /* Passage de la police de 16px par défaut, à 10px -----> 10/16*100= 62.5 */
+  cursor: url("./assets/img/arrowhead-rounded-outline(1).png") 2 3, auto;
 }
 
 body {
   margin: 0;
   font-size: 18px; /* On remet le body à 16px, la valeur par défaut */
-  background-color: #f2f0e3;
+  background-color: variables.$light-color-main;
 }
 
 header {
@@ -20,13 +21,12 @@ header {
   position: sticky;
   top: 0;
   border-bottom: 2px solid #000;
-  background: rgb(242, 240, 227);
   background: linear-gradient(
     180deg,
     rgba(242, 240, 227, 1) 0%,
     rgba(242, 240, 227, 0.5) 100%
   );
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   box-shadow: 0px 9.9px 20px rgba(0, 0, 0, 0.2);
   .logo-zone {
     display: flex;
@@ -73,4 +73,32 @@ p {
   font-style: normal;
   font-weight: 500;
   color: #202020;
+}
+.button-area {
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+button {
+  width: 100%;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #f2f0e3;
+  border: rgba(0, 0, 0, 0.2);
+  padding: 0.5em;
+  bottom: 0;
+  border-radius: 2em;
+  background: linear-gradient(
+    180deg,
+    rgb(20, 20, 20) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 0px 2.2px rgba(0, 0, 0, 0.048),
+    0px 0px 5.3px rgba(0, 0, 0, 0.069), 0px 0px 10px rgba(0, 0, 0, 0.085),
+    0px 0px 17.9px rgba(0, 0, 0, 0.101), 0px 0px 33.4px rgba(0, 0, 0, 0.122),
+    0px 0px 80px rgba(0, 0, 0, 0.17);
 }
