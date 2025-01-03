@@ -1,6 +1,3 @@
-$light-color-main: #f2f0e3;
-$dark-color-main: #202020;
-
 //Title
 @font-face {
   font-family: "Junicode";
@@ -53,3 +50,8 @@ $dark-color-main: #202020;
   src: url("../font/liberation2/LiberationSans-BoldItalic.ttf")
     format("truetype");
 }
+
+$light-color-main: #f2f0e3;
+$dark-color-main: #202020;
+$title-font: "Junicode";
+$main-font: "Helvetica";
