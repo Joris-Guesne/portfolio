@@ -86,6 +86,7 @@ header .fa-bars {
 .welcome-section {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 main {
@@ -109,6 +110,14 @@ h1 span {
 .logo-site {
   width: 3em;
   margin: 1rem;
+}
+
+.joris-profile {
+  position: relative;
+  z-index: -1;
+  left: 15rem;
+  top: 2rem;
+  width: 20rem;
 }
 
 .joris-gif {
