@@ -118,6 +118,8 @@ h1 span {
   left: 15rem;
   top: 2rem;
   width: 20rem;
+  border-radius: 1rem;
+  border: 2px solid black;
 }
 
 .joris-gif {
