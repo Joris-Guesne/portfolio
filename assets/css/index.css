@@ -95,22 +95,67 @@ header .fa-bars {
   flex-wrap: wrap;
   align-items: center;
 }
+.welcome-section .introduction {
+  width: 100%;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 2rem;
+  text-align: justify;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+.welcome-section .introduction button {
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-right: 0.5rem;
+  border: 2px solid #000;
+  font-family: "Space Grotesk";
+}
+.welcome-section .introduction button:first-of-type {
+  transition: ease-in-out 0.2s;
+  font-weight: bold;
+  background-color: #995e06;
+  color: #f2f0e3;
+}
+.welcome-section .introduction button:first-of-type:hover {
+  border-radius: 20rem;
+  background-color: #4f3103;
+  color: white;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.welcome-section .introduction button:last-of-type {
+  transition: ease-in-out 0.2s;
+  background-color: #f2f0e3;
+  color: #202020;
+}
+.welcome-section .introduction button:last-of-type:hover {
+  border-radius: 20rem;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  text-decoration: underline;
+}
 .welcome-section article {
+  display: flex;
+  flex-wrap: wrap;
   width: 30rem;
   justify-content: center;
 }
 .welcome-section article .joris-profile {
   position: relative;
-  z-index: -1;
-  left: 20%;
-  top: 2rem;
-  width: 25rem;
-  border-radius: 1rem;
+  right: 0;
+  z-index: -2;
+  width: 100%;
+  border-radius: 2rem;
   border: 2px solid black;
 }
 .welcome-section article .joris-gif {
-  width: 15em;
-  z-index: -2;
+  position: relative;
+  bottom: 5rem;
+  width: 70%;
+  z-index: -1;
   border-radius: 0.5em;
   box-shadow: 0px 1.9px 2.2px rgba(0, 0, 0, 0.2), 0px 4.7px 5.3px rgba(0, 0, 0, 0.028), 0px 8.8px 10px rgba(0, 0, 0, 0.1);
 }
@@ -126,18 +171,22 @@ main section {
 }
 
 h1 {
+  display: flex;
+  flex-wrap: wrap;
   font-family: "Junicode";
   font-weight: normal;
   font-style: normal;
-  font-size: 3em;
+  font-size: 3rem;
   color: #202020;
-  text-align: center;
+  text-align: left;
   margin: 1rem 0 1rem 0;
 }
 h1 span {
+  width: 100%;
   font-style: italic;
   font-weight: bold;
   color: #995e06;
+  font-size: 4rem;
 }
 
 h2 {
@@ -179,8 +228,7 @@ p {
   background: rgb(242, 240, 227);
   background: linear-gradient(0deg, rgb(242, 240, 227) 30%, rgba(255, 255, 255, 0) 100%);
 }
-
-button {
+.button-area button {
   width: 100%;
   font-size: 1.2em;
   font-weight: bold;
