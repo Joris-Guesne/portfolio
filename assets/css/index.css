@@ -78,6 +78,12 @@ header .logo-zone {
   display: flex;
   align-items: center;
 }
+header .logo-zone div p {
+  margin: 0.2rem;
+}
+header .logo-zone div #name-header {
+  font-weight: 900;
+}
 header .fa-bars {
   font-size: 4rem;
   margin: 2rem;
@@ -110,6 +116,8 @@ header .fa-bars {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
   max-width: 500px;
   margin: auto;
 }
