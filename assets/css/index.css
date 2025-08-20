@@ -7,7 +7,7 @@
 html {
     font-size: 62.5%; /* Passage de la police de 16px par défaut, à 10px -----> 10/16*100= 62.5 */
     cursor:
-        url("./assets/img/arrowhead-rounded-outline(1).png") 2 3,
+        url("../assets/img/arrowhead-rounded-outline(1).png") 2 3,
         auto;
     scroll-behavior: smooth;
     scroll-padding: 5rem;
@@ -147,7 +147,7 @@ header {
 }
 
 main {
-    background-image: url("./assets/img/test_bckgnd.jpg");
+    background-image: url("../assets/img/test_bckgnd.jpg");
     background-size: cover;
     background-position: center; /* Centrer l'image */
     background-repeat: no-repeat;
