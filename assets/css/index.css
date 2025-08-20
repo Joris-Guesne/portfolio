@@ -147,7 +147,7 @@ header {
 }
 
 main {
-    background-image: url("assets/img/test_bckgnd.jpg");
+    background-image: url("./assets/img/test_bckgnd.jpg");
     background-size: cover;
     background-position: center; /* Centrer l'image */
     background-repeat: no-repeat;
