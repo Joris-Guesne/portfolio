@@ -6,13 +6,7 @@
 
 html {
     font-size: 62.5%; /* Passage de la police de 16px par défaut, à 10px -----> 10/16*100= 62.5 */
-    cursor:
-        url("https://joris-guesne.github.io/portfolio/assets/img/arrowhead-rounded-outline(1).png")
-            2 3,
-        auto;
     scroll-behavior: smooth;
-    scroll-padding: 5rem;
-    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -566,79 +560,57 @@ main {
     background-color: white;
     border-radius: 4rem 4rem 0 0;
     padding: 5rem;
+    min-height: 40vh;
     h2 {
         font-family: "Oranienbaum";
         font-size: 7rem;
         margin: 0;
         text-shadow: #fff 0px 0 50px;
     }
-    form {
+    article {
         background-color: #ffc700;
         font-family: "Parkinsans";
         font-weight: 100;
         display: flex;
-        flex-direction: column;
         align-items: stretch;
-        justify-content: stretch;
+        justify-content: space-around;
         width: 100%;
         border-radius: 2rem;
-        max-width: 800px;
+        width: auto;
         padding: 2rem;
         margin-top: 3rem;
         gap: 2rem;
-        input,
-        textarea {
+        a {
+            background-color: white;
+            width: auto;
             padding: 1rem;
-            border-radius: 0.5rem;
-            border: none;
-            outline: none;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            transition: all ease-in-out 0.2s;
-            border: 2px solid transparent;
-            font-family: "Parkinsans";
-            &:focus {
-                border: 2px solid rgba(0, 0, 0, 1);
-                border-radius: 1rem;
+            border-radius: 1rem;
+            text-decoration: underline 2px solid black;
+            border: 2px solid black;
+            color: black;
+            font-weight: 700;
+            transition: all ease 0.2s;
+            &::after {
+                content: ">";
+                transform: scale(1);
+                position: absolute;
+                opacity: 0;
+                margin-left: 1rem;
+                transition: all ease 0.2s;
+                pointer-events: none;
+                color: white;
             }
-        }
-        .form-infos {
-            display: flex;
-            justify-content: stretch;
-            gap: 2rem;
-            ._nom,
-            ._email {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-            }
-        }
-        .form-message {
-            width: 100%;
-            textarea {
-                min-width: 100%;
-                max-width: fit-content;
-                min-height: 200px;
-            }
-            display: flex;
-            flex-direction: column;
-        }
-        button {
-            background-color: black;
-            color: #ffc700;
-            border: 5px solid transparent;
-            font-family: "Parkinsans";
-            font-size: 2rem;
-            padding: 1rem;
-            margin-top: 2rem;
-            border-radius: 0.5rem;
-            outline: none;
-            transition: all ease-in-out 0.2s;
             &:hover {
-                background-color: white;
-                border: 5px solid black;
-                color: black;
-                font-weight: 900;
+                transform: scale(1.1);
+                background-color: black;
+                color: #ffc700;
+                border: white 2px solid;
+                padding-right: 3rem;
+                margin: 0 1rem;
+                &::after {
+                    transform: scale(2);
+                    opacity: 1;
+                }
             }
         }
     }
