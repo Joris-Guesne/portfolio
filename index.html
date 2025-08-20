@@ -3,121 +3,358 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href=/assets/css/normalize.css" />
+        <link rel="stylesheet" href="/assets/css/normalize.css" />
         <link rel="stylesheet" href="/assets/css/index.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap"
             rel="stylesheet"
         />
         <title>Joris Guesné</title>
     </head>
     <body>
+        <div class="vignette-effect">
+            <div></div>
+            <div></div>
+        </div>
         <header>
-            <section class="logo-zone">
-                <a href="#">
-                    <img
-                        class="logo-site"
-                        src="/assets/img/logo-pixel.png"
-                        alt=""
+            <nav>
+                <svg
+                    class="burger-menu-stripes"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="50"
+                    height="50"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1"
+                        d="m2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5"
                     />
-                </a>
-                <div>
-                    <p id="name-header">Joris Guesné</p>
-                    <p>Développeur Web</p>
+                </svg>
+                <div class="buttons-header">
+                    <a href="#" class="top-button">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="30"
+                            viewBox="0 0 24 24"
+                        >
+                            <g
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <circle
+                                    cx="3"
+                                    cy="3"
+                                    r="3"
+                                    transform="matrix(0 -1 -1 0 15 22)"
+                                />
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M12 2v10m0-10c-.561 0-.989.438-1.843 1.314L8.5 4.97M12 2c.563 0 .99.438 1.844 1.314l1.657 1.656"
+                                />
+                            </g></svg
+                        >Haut de page</a
+                    >
+                    <a href="#contact" class="to-bottom-button">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="30"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M20.33 3.67a1.45 1.45 0 0 0-1.47-.35L4.23 8.2A1.44 1.44 0 0 0 4 10.85l6.07 3l3 6.09a1.44 1.44 0 0 0 1.29.79h.1a1.43 1.43 0 0 0 1.26-1l4.95-14.59a1.41 1.41 0 0 0-.34-1.47M4.85 9.58l12.77-4.26l-7.09 7.09Zm9.58 9.57l-2.84-5.68l7.09-7.09Z"
+                            /></svg
+                        >Me contacter</a
+                    >
                 </div>
-            </section>
-            <i class="fa-solid fa-bars"></i>
+
+                <ul>
+                    <li>
+                        <a
+                            href="/assets/files/CV_CDUI_Joris_Guesné.pdf"
+                            target="_blank"
+                            >Télécharger mon CV</a
+                        >
+                    </li>
+                    <li><a href="">Mon Github</a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/joris-guesné/"
+                            >Mon Linkedin</a
+                        >
+                    </li>
+                </ul>
+            </nav>
         </header>
         <main>
-            <section class="welcome-section">
-                <article class="introduction">
-                    <h1>Enchanté ! Je suis <span>Joris Guesné</span></h1>
-                    <p>
-                        Moi, c'est Joris Guesné: jeune développeur web, curieux
-                        et touche à tout.
-                    </p>
-                    <button>En savoir plus !</button>
-                    <button>Me contacter</button>
-                </article>
+            <div class="container">
+                <section class="hero-section">
+                    <article>
+                        <h1>Joris Guesné</h1>
+                        <p>Futur web designer !</p>
+                    </article>
 
-                <article>
-                    <img
-                        class="joris-profile"
-                        src="./assets/img/profile_croped.png"
-                        alt="Image représentant Joris"
-                    />
-                    <img
-                        class="joris-gif"
-                        src="./assets/img/speedUpGifMe-ezgif.com-effects.gif"
-                        alt="Animation représentant un éditeur de code présentant les informations de Joris"
-                    />
-                </article>
-            </section>
-            <section class="technos-section">
-                <h2>Quels technos j'utilise ?</h2>
-                <article>
-                    <h3>Frontend</h3>
+                    <article>
+                        <div>
+                            <p>
+                                <strong>Bonjour ! Moi c’est Joris.</strong>
+                            </p>
+                            <p>
+                                Je souhaite travailler dans le design
+                                d'interface et améliorer l’expérience
+                                utilisateur des gens dans le monde !
+                            </p>
+                            <p>
+                                Si vous voulez bien m’aider à accomplir cette
+                                mission, ça se passe
+                                <a href="#contact" class="contact-link"
+                                    >ici !</a
+                                >
+                            </p>
+                        </div>
+                    </article>
+                    <div class="scroll-downs">
+                        <div class="mousey">
+                            <div class="scroller"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="main-content">
+                    <article>
+                        <h2>Qui suis-je ?</h2>
+                        <div class="quisuisje">
+                            <img
+                                src="/assets/img/moi_et_molly.jpg"
+                                alt="Portrait de Joris Guesné"
+                            />
+                            <aside>
+                                <div class="profile-desc">
+                                    <p>
+                                        Je suis Joris Guesné, un développeur web
+                                        passionné par le design d'interface et
+                                        l'expérience utilisateur. A vrai dire,
+                                        tout ce qui touche à la création de
+                                        manière générale m'intéresse: de la
+                                        photographie à la création musicale,
+                                        tout me passionne.
+                                    </p>
+                                    <p>
+                                        Ca fait maintenant plus de deux ans que
+                                        j'ai commencé ma reconversion
+                                        professionnelle en tant que développeur
+                                        web. Récemment diplômé du titre
+                                        professionnel Développeur Web et Mobile
+                                        (niveau bac+2/3), je ne compte pas
+                                        m'arrêter de si tôt et je souhaite
+                                        apprendre le design d'interface en
+                                        alternance!
+                                    </p>
+                                </div>
 
-                    <div class="tech-pill">HTML</div>
-                    <div class="tech-pill">CSS</div>
-                    <div class="tech-pill">SASS</div>
-                    <div class="tech-pill">JavaScript</div>
-                    <div class="tech-pill">React JS</div>
-                </article>
-                <article>
-                    <h3>Backend</h3>
-                    <div class="tech-pill">PHP</div>
-                    <div class="tech-pill">SQL</div>
-                    <div class="tech-pill">MySQL</div>
-                    <div class="tech-pill">MongoDB</div>
-                </article>
-            </section>
-            <section class="main-content">
-                <article>
-                    <h2>Devenir un développeur web hors pair !</h2>
-                    <p>
-                        Mon seul et unique but dans la vie, c'est de devenir
-                        développeur web !! (Bon j'ai d'autres projets à côté
-                        évidemment 😉 ...)
-                    </p>
-                    <p>
-                        Il m'aura fallu plusieurs années pour savoir ce que je
-                        souhaitais faire dans la vie - et il n'est jamais trop
-                        tard. J'ai donc passé deux ans à effectuer des démarches
-                        de reconversion professionnelle et j'ai pu montrer ma
-                        motivation comme jamais !
-                    </p>
-                </article>
-                <article>
-                    <h2>Mais diantre, pourquoi developpeur web ?</h2>
-                    <p>
-                        J'ai toujours été un mordu d'informatique en général. Un
-                        véritable virus qui m'as été transmis par mon père qui,
-                        quand j'étais petit, développait son propre site web sur
-                        son temps libre.
-                    </p>
-                    <p>
-                        J'ai toujours aimé bidouiller des truc et fouiller les
-                        fichiers de l'ordinateur pour comprendre comment les
-                        choses fonctionnaient.
-                    </p>
-                </article>
-            </section>
+                                <div class="stack-tech">
+                                    <h3>Stack technique</h3>
+                                    <p>HTML</p>
+                                    <p>CSS</p>
+                                    <p>Javascript</p>
+                                    <p>PHP</p>
+                                    <p>Git</p>
+                                    <p class="pending">Figma</p>
+                                    <p class="pending">Penpot</p>
+                                </div>
+                            </aside>
+                        </div>
+                    </article>
+                    <article>
+                        <h2>Mes derniers projets</h2>
+                        <div class="mes-derniers-projets">
+                            <div class="projet">
+                                <div class="projet-desc">
+                                    <p class="project-languages">
+                                        + HTML - CSS - JavaScript - PHP - Twig +
+                                    </p>
+                                    <h3>
+                                        Site vitrine du centre de santé
+                                        infirmier de Ploërmel
+                                    </h3>
+                                    <p>
+                                        Ce projet à été réalisé pour mon projet
+                                        de fin d'études en formation
+                                        professionnelle. Réalisé à titre
+                                        purement éducatif, le site à pour but de
+                                        présenter les services du centre de
+                                        santé infirmier de Ploërmel.
+                                    </p>
+                                    <p>
+                                        Les informations sur site sont
+                                        entièrement administrables et
+                                        modifiables par l'administrateur du site
+                                        et les personnes ayant les autorisations
+                                        nécessaires. (Texte de la page
+                                        d'accueil, horaire, numéro de téléphone,
+                                        etc.)
+                                    </p>
+                                    <p>
+                                        De plus, j'ai développé une interface
+                                        utilisateur conviviale pour pouvoir
+                                        ajouter des articles et mettre à jour le
+                                        blog des actualités du centre.
+                                    </p>
+                                    <p>
+                                        Bien évidement, le site est entièrement
+                                        responsive. <em>(cela va de soit !)</em>
+                                    </p>
+                                </div>
 
-            <div class="button-area">
-                <button href="https://www.google.fr">
-                    Découvrir mes projets >
-                </button>
+                                <div class="ext-project-links">
+                                    <a
+                                        href="https://github.com/Joris-Guesne/projet-etude-CDSI"
+                                    >
+                                        <p class="overlay-text">
+                                            Voir les maquettes
+                                        </p>
+                                        <img
+                                            src="/assets/img/capture_maquette_CDSI_Penpot.jpg"
+                                            alt="Capture d'écran de la maquette du site réalisé avec Penpot"
+                                            title="Maquette réalisée avec Penpot"
+                                        />
+                                    </a>
+
+                                    <a
+                                        href="https://github.com/Joris-Guesne/projet-etude-CDSI"
+                                    >
+                                        <p class="overlay-text">
+                                            Voir le dépot
+                                        </p>
+                                        <img
+                                            src="/assets/img/capture_code_CDSI_Github.jpg"
+                                            alt="Capture d'écran du code du site"
+                                            title="Extrait du code du site"
+                                        />
+                                    </a>
+                                    <a
+                                        href="https://projet-etude-cdsi.fr"
+                                        title="Visiter projet-etude-cdsi.fr"
+                                    >
+                                        <p class="overlay-text">Voir le site</p>
+                                        <img
+                                            src="/assets/img/capture_site_CDSI.jpg"
+                                            alt="Capture d'écran du site"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="projet">
+                                <div class="projet-desc">
+                                    <p class="project-languages">
+                                        + HTML - CSS +
+                                    </p>
+                                    <h3>Site vitrine pour moi même !</h3>
+                                    <p>
+                                        Ce projet à été réalisé afin de
+                                        présenter mes compétences et mes projets
+                                        personnels.
+                                    </p>
+                                    <p>
+                                        J'ai parfaitement conciences de mes
+                                        limites actuelles mais je souhaite me
+                                        surpasser et continuer à apprendre
+                                        d'avantage !
+                                    </p>
+                                </div>
+
+                                <div class="ext-project-links">
+                                    <a
+                                        href="https://github.com/Joris-Guesne/projet-etude-CDSI"
+                                    >
+                                        <p class="overlay-text">
+                                            Voir les maquettes
+                                        </p>
+                                        <img
+                                            src="/assets/img/capture_maquette_CDSI_Penpot.jpg"
+                                            alt="Capture d'écran de la maquette du site réalisé avec Penpot"
+                                            title="Maquette réalisée avec Penpot"
+                                        />
+                                    </a>
+
+                                    <a
+                                        href="https://github.com/Joris-Guesne/projet-etude-CDSI"
+                                    >
+                                        <p class="overlay-text">
+                                            Voir le dépot
+                                        </p>
+                                        <img
+                                            src="/assets/img/capture_code_CDSI_Github.jpg"
+                                            alt="Capture d'écran du code du site"
+                                            title="Extrait du code du site"
+                                        />
+                                    </a>
+                                    <a
+                                        href="https://projet-etude-cdsi.fr"
+                                        title="Visiter projet-etude-cdsi.fr"
+                                    >
+                                        <p class="overlay-text">Voir le site</p>
+                                        <img
+                                            src="/assets/img/capture_site_CDSI.jpg"
+                                            alt="Capture d'écran du site"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                <section class="contact-section" id="contact">
+                    <h2>Contactez moi !</h2>
+                    <form action="mailto:bidel">
+                        <div class="form-infos">
+                            <div class="_nom">
+                                <label for="name">Nom prénom :</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    placeholder="Ex: Camille Dupont"
+                                />
+                            </div>
+                            <div class="_email">
+                                <label for="email">Email :</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    placeholder="Ex: camille.dupont@email.com"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-message">
+                            <label for="message">Message :</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                required
+                                placeholder="Écrivez votre message ici..."
+                            ></textarea>
+                            <button type="submit">Envoyer</button>
+                        </div>
+                    </form>
+                </section>
             </div>
         </main>
         <footer>
-            <p>Fait avec amour en HTML / CSS !</p>
+            <p>Fait avec amour en HTML / CSS (uniquement !)</p>
+            <p>Copyright © 2025 Joris Guesné</p>
         </footer>
     </body>
 </html>
