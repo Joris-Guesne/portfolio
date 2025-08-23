@@ -1,4 +1,4 @@
-@import url(assets/css/variables.css);
+@import url(variables.css);
 
 * {
     box-sizing: border-box;
@@ -11,41 +11,41 @@ html {
 
 body {
     margin: 0;
-    font-size: 18px; /* On remet le body à 16px, la valeur par défaut */
+    font-size: var(--font-size-sm); /* On remet le body à 18px */
 }
 
 header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    z-index: 200;
+    z-index: var(--z-index-nav);
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     nav {
-        border: 30px solid transparent;
-        min-width: 6rem;
-        max-width: 6rem;
-        border-radius: 3rem;
-        height: 6rem;
-        z-index: 200;
-        background-color: rgba(255, 255, 255, 0.5);
-        backdrop-filter: blur(3px);
-        margin: 2rem 2rem;
+        border: var(--nav-border) solid transparent;
+        min-width: var(--nav-size);
+        max-width: var(--nav-size);
+        border-radius: var(--nav-radius);
+        height: var(--nav-size);
+        z-index: var(--z-index-nav);
+        background-color: var(--color-white-50);
+        backdrop-filter: var(--blur-light);
+        margin: var(--nav-margin) var(--nav-margin);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+        transition: all var(--timing-cubic-smooth) var(--duration-medium);
         .burger-menu-stripes {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) scale(1);
-            z-index: 200;
-            color: black;
+            z-index: var(--z-index-nav);
+            color: var(--color-black);
             opacity: 1;
-            transition: all ease 0.2s;
+            transition: all var(--timing-ease) var(--duration-fast);
         }
         ul {
             padding: 0;
@@ -53,30 +53,31 @@ header {
             display: flex;
             opacity: 0;
             transform: translate(-100%, 0%);
-            transition: all ease 0.2s;
+            transition: all var(--timing-ease) var(--duration-fast);
             text-wrap: nowrap;
             pointer-events: none;
             li {
-                padding: 0 1rem;
+                padding: 0 var(--spacing-sm);
             }
             a {
-                text-shadow: #000 0px 0 5px;
+                text-shadow: var(--shadow-text-light);
                 text-decoration: none;
-                color: white;
-                font-family: "Parkinsans";
-                font-weight: 300;
+                color: var(--color-white);
+                font-family: var(--font-primary);
+                font-weight: var(--font-weight-light);
             }
         }
         .buttons-header {
             display: flex;
             .top-button {
-                background-color: rgba(255, 255, 255, 1);
-                color: black;
-                padding: 0.5rem 1rem 0.5rem 0.5rem;
-                border-radius: 5rem;
-                margin-left: 1rem;
-                font-family: "Parkinsans";
-                font-weight: 500;
+                background-color: var(--color-white);
+                color: var(--color-black);
+                padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-xs)
+                    var(--spacing-xs);
+                border-radius: var(--border-radius-full);
+                margin-left: var(--spacing-sm);
+                font-family: var(--font-primary);
+                font-weight: var(--font-weight-medium);
                 text-decoration: none;
                 display: flex;
                 align-items: center;
@@ -84,21 +85,22 @@ header {
                 pointer-events: none;
                 transform: translate(-100%, 0%) scaleY(0.8) scaleX(0.2);
                 opacity: 0;
-                transition: all ease-out 0.2s;
+                transition: all var(--timing-ease-out) var(--duration-fast);
                 svg {
-                    z-index: 2;
+                    z-index: var(--z-index-content);
                     display: block;
-                    color: black;
+                    color: var(--color-black);
                 }
             }
             .to-bottom-button {
-                background-color: #ffc700;
-                color: black;
-                padding: 0.5rem 1rem 0.5rem 0.5rem;
-                border-radius: 5rem;
-                margin-left: 1rem;
-                font-family: "Parkinsans";
-                font-weight: 500;
+                background-color: var(--color-primary);
+                color: var(--color-black);
+                padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-xs)
+                    var(--spacing-xs);
+                border-radius: var(--border-radius-full);
+                margin-left: var(--spacing-sm);
+                font-family: var(--font-primary);
+                font-weight: var(--font-weight-medium);
                 text-decoration: none;
                 display: flex;
                 align-items: center;
@@ -106,21 +108,21 @@ header {
                 pointer-events: none;
                 transform: translate(-100%, 0%);
                 opacity: 0;
-                transition: all ease-out 0.2s;
+                transition: all var(--timing-ease-out) var(--duration-fast);
                 svg {
-                    z-index: 2;
+                    z-index: var(--z-index-content);
                     display: block;
-                    color: black;
+                    color: var(--color-black);
                 }
             }
         }
 
         &:hover {
-            min-width: 50%;
+            min-width: var(--max-width-nav-expanded);
             max-width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            border: 2px solid white;
+            background-color: var(--color-black-50);
+            backdrop-filter: var(--blur-medium);
+            border: 2px solid var(--color-white);
             ul {
                 opacity: 1;
                 transform: translate(0%, 0%);
@@ -147,11 +149,11 @@ main {
     background-position: center; /* Centrer l'image */
     background-repeat: no-repeat;
     background-attachment: fixed; /* Figer l'image d'arrière-plan */
-    border-radius: 4rem;
+    border-radius: var(--border-radius-xl);
     .container {
         position: relative;
     }
-    margin: 10px;
+    margin: var(--vignette-border);
 }
 
 .vignette-effect {
@@ -160,9 +162,9 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    border: 10px solid #fff;
+    border: var(--vignette-border) solid var(--color-white);
     border-radius: 0rem;
-    z-index: 200;
+    z-index: var(--z-index-vignette);
     pointer-events: none;
     div {
         &:first-of-type {
@@ -171,8 +173,8 @@ main {
             left: 0;
             height: inherit;
             width: inherit;
-            border: 10px solid #fff;
-            border-radius: 3rem;
+            border: var(--vignette-border) solid var(--color-white);
+            border-radius: var(--nav-radius);
         }
         &:last-of-type {
             position: fixed;
@@ -180,9 +182,9 @@ main {
             left: 0;
             height: inherit;
             width: inherit;
-            border: 10px solid #fff;
-            border-radius: 5rem;
-            box-shadow: inset 0px -5px 15px rgba(0, 0, 0, 0.2);
+            border: var(--vignette-border) solid var(--color-white);
+            border-radius: var(--border-radius-2xl);
+            box-shadow: var(--shadow-inset);
         }
     }
 }
@@ -190,63 +192,63 @@ main {
 /* HERO SECTION*/
 .hero-section {
     display: flex;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--color-black-70);
     height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-radius: 4rem;
-    padding: 5rem;
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
     article {
         &:first-of-type {
             flex: 1;
-            transition: all ease-in-out 0.2s;
+            transition: all var(--timing-ease-in-out) var(--duration-fast);
             h1 {
-                font-size: 20rem;
-                font-family: "Oranienbaum";
+                font-size: var(--font-size-5xl);
+                font-family: var(--font-heading);
                 text-align: right;
-                color: #ccc;
-                font-weight: 100;
-                line-height: 0.8;
-                letter-spacing: -1rem;
+                color: var(--color-gray-light);
+                font-weight: var(--font-weight-thin);
+                line-height: var(--line-height-tight);
+                letter-spacing: var(--letter-spacing-tight);
                 margin: 0;
-                text-shadow: #000 0px 0 40px;
+                text-shadow: var(--shadow-text-medium);
             }
             p {
                 text-align: right;
-                color: #ffc700;
-                font-family: "Parkinsans";
-                font-size: 3rem;
+                color: var(--color-primary);
+                font-family: var(--font-primary);
+                font-size: var(--font-size-lg);
                 font-style: italic;
-                font-weight: 100;
+                font-weight: var(--font-weight-thin);
             }
         }
         &:last-of-type {
             flex: 1.5;
-            transition: all ease-in-out 0.2s;
+            transition: all var(--timing-ease-in-out) var(--duration-fast);
             display: flex;
             justify-content: center;
             div {
-                --border-width: 1px;
-                color: #fff;
-                font-size: 2.5rem;
-                font-family: "Parkinsans";
-                font-weight: 100;
-                padding: 5rem;
-                z-index: 2;
-                border-radius: 2rem;
+                --border-width: var(--border-width);
+                color: var(--color-white);
+                font-size: var(--font-size-lg);
+                font-family: var(--font-primary);
+                font-weight: var(--font-weight-thin);
+                padding: var(--spacing-xl);
+                z-index: var(--z-index-content);
+                border-radius: var(--border-radius-lg);
                 position: relative;
-                background: rgba(0, 0, 0, 0.1);
-                backdrop-filter: blur(12px);
-                transition: all ease-in-out 0.2s;
+                background: var(--color-black-10);
+                backdrop-filter: var(--blur-heavy);
+                transition: all var(--timing-ease-in-out) var(--duration-fast);
                 max-width: 80%;
                 &::before {
                     content: "";
                     position: absolute;
-                    z-index: -1;
+                    z-index: var(--z-index-background);
                     inset: 0;
                     border-radius: inherit;
-                    background: linear-gradient(#444, #333) border-box;
+                    background: var(--gradient-border-light) border-box;
                     border: var(--border-width) solid transparent;
                     mask:
                         linear-gradient(black) border-box,
@@ -287,7 +289,8 @@ main {
 
 /*dsf*/
 .main-content {
-    padding: 0 10rem 10rem 10rem;
+    padding: 0 var(--section-padding) var(--section-padding)
+        var(--section-padding);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -297,32 +300,31 @@ main {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        max-width: 1700px;
+        max-width: var(--max-width-content);
         min-height: 90vh;
         h2 {
-            font-family: "Oranienbaum";
-            font-size: 10rem;
-            margin: 20rem 0 5rem 0;
-            text-shadow: #fff 0px 0 50px;
+            font-family: var(--font-heading);
+            font-size: var(--font-size-4xl);
+            margin: var(--spacing-4xl) 0 var(--spacing-xl) 0;
+            text-shadow: var(--shadow-text-glow);
         }
         > div {
             max-width: 100%;
-            --border-width: 1px;
-            font-family: "Parkinsans";
-            font-weight: 100;
-            z-index: 2;
-            border-radius: 2rem;
+            --border-width: var(--border-width);
+            font-family: var(--font-primary);
+            font-weight: var(--font-weight-thin);
+            z-index: var(--z-index-content);
+            border-radius: var(--border-radius-lg);
             position: relative;
-
-            backdrop-filter: blur(12px);
-            transition: all ease-in-out 0.2s;
+            backdrop-filter: var(--blur-heavy);
+            transition: all var(--timing-ease-in-out) var(--duration-fast);
             &::before {
                 content: "";
                 position: absolute;
-                z-index: -1;
+                z-index: var(--z-index-background);
                 inset: 0;
                 border-radius: inherit;
-                background: linear-gradient(#999, #777) border-box;
+                background: var(--gradient-border-medium) border-box;
                 border: var(--border-width) solid transparent;
                 mask:
                     linear-gradient(black) border-box,
@@ -336,35 +338,34 @@ main {
 .quisuisje {
     padding: 0;
     display: flex;
-    background: rgba(255, 255, 255, 0.3);
+    flex-flow: wrap row;
+    background: var(--color-white-30);
+    justify-content: center;
+    padding: var(--section-padding);
+    gap: var(--section-padding);
     img {
         width: 0%;
         max-height: 1000px;
-        border-radius: 2rem 10rem 10rem 2rem;
+        border-radius: var(--border-radius-lg) var(--section-padding)
+            var(--section-padding) var(--border-radius-lg);
         object-fit: cover;
         flex: 1;
     }
     aside {
         flex: 2;
-        padding: 10rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        p {
-            font-size: 2.5rem;
-            line-height: 1.5;
-            flex: 2;
-            margin-left: 2rem;
-        }
+        height: 80%;
     }
     .profile-desc {
         display: flex;
         flex-direction: column;
         align-items: center;
         p {
-            font-size: 2.5rem;
-            line-height: 1.5;
+            font-size: var(--font-size-lg);
+            line-height: var(--line-height-normal);
             flex: 2;
             margin-left: 0;
         }
@@ -373,35 +374,34 @@ main {
         display: flex;
         flex-wrap: wrap;
         justify-content: stretch;
-        background-color: rgba(0, 0, 0, 0.2);
-        margin-top: 5rem;
-        border-radius: 1rem;
-        color: #fff;
-        padding: 2rem;
+        background-color: var(--color-black-20);
+        border-radius: var(--border-radius-md);
+        color: var(--color-white);
+        padding: var(--spacing-md);
         width: 100%;
         h3 {
             width: 100%;
             text-align: left;
-            font-size: 3rem;
+            font-size: var(--font-size-xl);
             margin: 0;
         }
         p {
             flex: 1;
             text-align: center;
-            font-family: "Courier New", Courier, monospace;
-            background-color: rgba(255, 255, 255, 0.7);
-            color: black;
+            font-family: var(--font-code);
+            background-color: var(--color-white-70);
+            color: var(--color-black);
             font-style: italic;
-            font-weight: 900;
-            margin: 1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            font-size: 2rem;
+            font-weight: var(--font-weight-black);
+            margin: var(--spacing-sm);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            font-size: var(--font-size-md);
             &.pending {
-                font-weight: 500;
-                color: white;
-                border: 1px dashed white;
-                background: black;
+                font-weight: var(--font-weight-medium);
+                color: var(--color-white);
+                border: 1px dashed var(--color-white);
+                background: var(--color-black);
             }
         }
     }
@@ -432,7 +432,7 @@ main {
                 ); /* Positionner la ligne au milieu de l'espacement */
                 left: 50%;
                 transform: translateX(-50%);
-                width: 90%; /* La ligne fait 80% de la largeur du conteneur */
+                width: 90%; /* La ligne fait 90% de la largeur du conteneur */
                 height: 1px;
                 background-color: white;
             }
@@ -537,17 +537,17 @@ main {
 
 .contact-link {
     display: inline-block;
-    background-color: #ffc700;
-    padding: 0 1rem;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    color: black;
+    background-color: var(--color-primary);
+    padding: 0 var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-black);
     text-decoration: none;
-    transition: all ease-in-out 0.2s;
+    transition: all var(--timing-ease-in-out) var(--duration-fast);
     &:hover {
-        font-weight: 700;
-        color: #ffc700;
-        background-color: #000;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        background-color: var(--color-black);
         transform: scale(1.1);
     }
 }
@@ -557,56 +557,59 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: white;
-    border-radius: 4rem 4rem 0 0;
-    padding: 5rem;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+    padding: var(--spacing-xl);
     min-height: 40vh;
+    box-shadow: var(--shadow-box);
+    -webkit-box-shadow: var(--shadow-box);
+    -moz-box-shadow: var(--shadow-box);
     h2 {
-        font-family: "Oranienbaum";
-        font-size: 7rem;
+        font-family: var(--font-heading);
+        font-size: var(--font-size-3xl);
         margin: 0;
-        text-shadow: #fff 0px 0 50px;
+        text-shadow: var(--shadow-text-glow);
     }
     article {
-        background-color: #ffc700;
-        font-family: "Parkinsans";
-        font-weight: 100;
+        background-color: var(--color-primary);
+        font-family: var(--font-primary);
+        font-weight: var(--font-weight-thin);
         display: flex;
         align-items: stretch;
         justify-content: space-around;
         width: 100%;
-        border-radius: 2rem;
+        border-radius: var(--border-radius-lg);
         width: auto;
-        padding: 2rem;
-        margin-top: 3rem;
-        gap: 2rem;
+        padding: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+        gap: var(--spacing-md);
         a {
-            background-color: white;
+            background-color: var(--color-white);
             width: auto;
-            padding: 1rem;
-            border-radius: 1rem;
-            text-decoration: underline 2px solid black;
-            border: 2px solid black;
-            color: black;
-            font-weight: 700;
-            transition: all ease 0.2s;
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius-md);
+            text-decoration: underline 2px solid var(--color-black);
+            border: 2px solid var(--color-black);
+            color: var(--color-black);
+            font-weight: var(--font-weight-bold);
+            transition: all var(--timing-ease) var(--duration-fast);
             &::after {
                 content: ">";
                 transform: scale(1);
                 position: absolute;
                 opacity: 0;
-                margin-left: 1rem;
-                transition: all ease 0.2s;
+                margin-left: var(--spacing-sm);
+                transition: all var(--timing-ease) var(--duration-fast);
                 pointer-events: none;
-                color: white;
+                color: var(--color-white);
             }
             &:hover {
                 transform: scale(1.1);
-                background-color: black;
-                color: #ffc700;
-                border: white 2px solid;
-                padding-right: 3rem;
-                margin: 0 1rem;
+                background-color: var(--color-black);
+                color: var(--color-primary);
+                border: var(--color-white) 2px solid;
+                padding-right: var(--spacing-lg);
+                margin: 0 var(--spacing-sm);
                 &::after {
                     transform: scale(2);
                     opacity: 1;
@@ -617,18 +620,115 @@ main {
 }
 
 footer {
-    z-index: 500;
+    z-index: var(--z-index-footer);
     position: absolute;
-    background-color: black;
-    color: #ffc700;
-    padding: 5rem;
-    border-radius: 4rem 4rem 5rem 5rem;
-    border: 10px solid white;
+    background-color: var(--color-black);
+    color: var(--color-primary);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-xl) var(--border-radius-xl)
+        var(--border-radius-2xl) var(--border-radius-2xl);
+    border: var(--vignette-border) solid var(--color-white);
     width: 100%;
-    font-family: "Parkinsans";
-    font-weight: 100;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-thin);
 }
 
+@media screen and (max-width: 1300px) {
+    .hero-section {
+        article {
+            &:first-of-type {
+                h1 {
+                    font-size: 15rem;
+                }
+            }
+        }
+    }
+    .quisuisje {
+        padding: var(--spacing-lg);
+        gap: var(--spacing-lg);
+        aside {
+            .profile-desc {
+                p {
+                    font-size: var(--font-size-md);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 950px) {
+    .hero-section {
+        flex-direction: column;
+        article {
+            &:first-of-type {
+                flex: 1.5;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                h1 {
+                    text-align: center;
+                }
+            }
+            &:last-of-type {
+                flex: 1;
+            }
+        }
+    }
+    .quisuisje {
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        gap: var(--spacing-lg);
+        img {
+            width: auto;
+            border-radius: var(--border-radius-md);
+            max-height: 300px;
+            object-position: 0 30%;
+        }
+        aside {
+            flex: 1;
+            .profile-desc {
+                p {
+                    font-size: var(--font-size-sm);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 700px) {
+    .hero-section {
+        padding: var(--spacing-md);
+        article {
+            &:first-of-type {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                h1 {
+                    text-align: center;
+                    font-size: var(--font-size-3xl);
+                }
+                p {
+                    font-size: var(--font-size-md);
+                }
+            }
+            &:last-of-type {
+                display: block;
+                flex: 1;
+                div {
+                    padding: var(--spacing-md);
+                    max-width: 100%;
+                    p {
+                        font-size: var(--font-size-sm);
+                    }
+                }
+            }
+        }
+    }
+    .main-content {
+        padding: var(--spacing-md);
+    }
+}
 @keyframes scroll {
     0% {
         opacity: 0;
