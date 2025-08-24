@@ -861,8 +861,8 @@ footer {
 @media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     main {
         background-attachment: scroll;
-        background-color: green;
-        background-size: cover;
+        background-color: orangered;
+        background-size: auto 100vh;
         background-position: center;
     }
 }
