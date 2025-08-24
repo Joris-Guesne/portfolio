@@ -866,6 +866,15 @@ footer {
         background-position: center;
     }
 }
+@supports (-webkit-appearance: none) {
+    @media screen and (max-width: 1024px) {
+        main {
+            background-attachment: scroll !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+    }
+}
 @keyframes scroll {
     0% {
         opacity: 0;
