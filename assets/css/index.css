@@ -229,7 +229,6 @@ main {
             display: flex;
             justify-content: center;
             div {
-                --border-width: var(--border-width);
                 color: var(--color-white);
                 font-size: var(--font-size-lg);
                 font-family: var(--font-primary);
@@ -310,7 +309,6 @@ main {
         }
         > div {
             max-width: 100%;
-            --border-width: var(--border-width);
             font-family: var(--font-primary);
             font-weight: var(--font-weight-thin);
             z-index: var(--z-index-content);
