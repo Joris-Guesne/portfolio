@@ -143,17 +143,20 @@ header {
     }
 }
 
-main {
+main:after {
+    content: "";
+    position: fixed; /* stretch a fixed position to the whole screen */
+    top: 0;
+    height: 100vh; /* fix for mobile browser address bar appearing disappearing */
+    left: 0;
+    right: 0;
+    z-index: -1; /* needed to keep in the background */
     background-image: url("https://joris-guesne.github.io/portfolio/assets/img/test_bckgnd.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-position: center; /* Centrer l'image */
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Figer l'image d'arrière-plan */
-    border-radius: var(--border-radius-xl);
-    .container {
-        position: relative;
-    }
-    margin: var(--vignette-border);
+    background-position: center;
 }
 
 .vignette-effect {
@@ -857,32 +860,7 @@ footer {
         padding: var(--spacing-md);
     }
 }
-/*Test fix safari ios backgroundimage*/
-@media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-    main:after {
-        content: "";
-        position: fixed; /* stretch a fixed position to the whole screen */
-        top: 0;
-        height: 100vh; /* fix for mobile browser address bar appearing disappearing */
-        left: 0;
-        right: 0;
-        z-index: -1; /* needed to keep in the background */
-        background-image: url("https://joris-guesne.github.io/portfolio/assets/img/test_bckgnd.jpg");
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        /*
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        border-radius: var(--border-radius-xl);
-        .container {
-            position: relative;
-        }
-        margin: var(--vignette-border);*/
-    }
-}
+
 @keyframes scroll {
     0% {
         opacity: 0;
