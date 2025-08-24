@@ -860,9 +860,9 @@ footer {
 /*Test fix safari ios backgroundimage*/
 @media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     main {
-        background-attachment: scroll !important;
+        background-attachment: fixed;
         background-color: yellow;
-        background-size: fit;
+        background-size: cover;
         background-position: center;
     }
 }
