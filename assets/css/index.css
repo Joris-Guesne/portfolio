@@ -143,6 +143,9 @@ header {
     }
 }
 
+main {
+    padding: 1rem;
+}
 main:after {
     content: "";
     position: fixed; /* stretch a fixed position to the whole screen */
@@ -178,6 +181,15 @@ main:after {
             width: inherit;
             border: var(--vignette-border) solid var(--color-white);
             border-radius: var(--nav-radius);
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                outline: 200px solid var(--color-white);
+            }
         }
         &:last-of-type {
             position: fixed;
@@ -562,9 +574,9 @@ main:after {
     border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
     padding: var(--spacing-xl);
     min-height: 40vh;
-    box-shadow: var(--shadow-box);
-    -webkit-box-shadow: var(--shadow-box);
-    -moz-box-shadow: var(--shadow-box);
+    box-shadow: -1px 100px 0px 37px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: -1px 100px 0px 37px rgba(255, 255, 255, 1);
+    -moz-box-shadow: -1px 100px 0px 37px rgba(255, 255, 255, 1);
     h2 {
         font-family: var(--font-heading);
         font-size: var(--font-size-3xl);
