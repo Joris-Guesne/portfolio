@@ -861,18 +861,9 @@ footer {
 @media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     main {
         background-attachment: scroll !important;
-        background-color: red;
-        background-size: cover;
+        background-color: yellow;
+        background-size: fit;
         background-position: center;
-    }
-}
-@supports (-webkit-appearance: none) {
-    @media screen and (max-width: 1024px) {
-        main {
-            background-attachment: scroll !important;
-            background-size: cover !important;
-            background-position: center !important;
-        }
     }
 }
 @keyframes scroll {
