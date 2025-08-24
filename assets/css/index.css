@@ -857,6 +857,14 @@ footer {
         padding: var(--spacing-md);
     }
 }
+/*Test fix safari ios backgroundimage*/
+@media screen and (max-width: 1024px) and (-webkit-touch-callout: default) {
+    main {
+        background-attachment: scroll !important;
+        background-size: cover;
+        background-position: center;
+    }
+}
 @keyframes scroll {
     0% {
         opacity: 0;
