@@ -660,7 +660,7 @@ footer {
         nav {
             pointer-events: none;
             position: relative;
-
+            flex-direction: column;
             .burger-btn {
                 pointer-events: initial;
                 cursor: pointer;
