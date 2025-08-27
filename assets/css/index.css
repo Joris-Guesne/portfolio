@@ -682,7 +682,6 @@ footer {
                 backdrop-filter: var(--blur-medium);
                 border: 2px solid var(--color-white);
                 text-align: center;
-                border: 5px solid red !important;
                 ul {
                     flex-direction: column;
                     opacity: 1;
@@ -706,6 +705,61 @@ footer {
                     opacity: 1;
                     transform: scale(1);
                     pointer-events: initial;
+                }
+
+                /* Fallback pour les navigateurs qui ne supportent pas :has() correctement */
+                .burger-checkbox:checked ~ .burger-btn {
+                    position: relative;
+                    top: 4rem;
+                    left: 4rem;
+                    color: var(--color-white);
+                    margin-right: 5rem;
+                    z-index: 1001;
+                }
+
+                .burger-checkbox:checked ~ .burger-btn .burger-menu-stripes {
+                    color: var(--color-white);
+                }
+
+                .burger-checkbox:checked ~ .buttons-header {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    padding-top: 5rem;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: var(--color-black-70);
+                    backdrop-filter: var(--blur-medium);
+                    border: 2px solid var(--color-white);
+                    text-align: center;
+                    z-index: 1000;
+                }
+
+                .burger-checkbox:checked ~ .buttons-header .top-button,
+                .burger-checkbox:checked ~ .buttons-header .to-bottom-button {
+                    opacity: 1;
+                    transform: scale(1);
+                    pointer-events: initial;
+                }
+
+                .burger-checkbox:checked ~ ul {
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    flex-direction: column;
+                    opacity: 1;
+                    pointer-events: initial;
+                    font-size: var(--font-size-lg);
+                    gap: 3rem;
+                    z-index: 1001;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
                 }
             }
         }
