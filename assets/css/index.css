@@ -682,6 +682,7 @@ footer {
                 backdrop-filter: var(--blur-medium);
                 border: 2px solid var(--color-white);
                 text-align: center;
+                border: 5px solid red !important;
                 ul {
                     flex-direction: column;
                     opacity: 1;
@@ -709,11 +710,7 @@ footer {
             }
         }
     }
-    nav:has(.burger-checkbox:checked) ul {
-        background-color: red !important;
-        opacity: 1 !important;
-        display: block !important;
-    }
+
     .hero-section {
         article {
             &:first-of-type {
