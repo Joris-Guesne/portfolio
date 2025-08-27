@@ -37,6 +37,14 @@ header {
         justify-content: space-between;
         align-items: center;
         transition: all var(--timing-cubic-smooth) var(--duration-medium);
+        /* Cache le checkbox */
+        .burger-checkbox {
+            display: none;
+        }
+        .burger-btn {
+            pointer-events: none;
+            position: absolute;
+        }
         .burger-menu-stripes {
             position: absolute;
             top: 50%;
@@ -45,7 +53,7 @@ header {
             z-index: var(--z-index-nav);
             color: var(--color-black);
             opacity: 1;
-            transition: all var(--timing-ease) var(--duration-fast);
+            transition: all var(--timing-ease-in-out) var(--duration-fast);
         }
         ul {
             padding: 0;
@@ -131,7 +139,8 @@ header {
             .burger-menu-stripes {
                 pointer-events: none;
                 opacity: 0;
-                transform: translate(50%, -50%) scaleX(10);
+                color: var(--color-white);
+                transform: translate(150%, -50%) scaleX(5);
             }
             .top-button,
             .to-bottom-button {
@@ -647,6 +656,59 @@ footer {
 }
 
 @media screen and (max-width: 1300px) {
+    header {
+        nav {
+            pointer-events: none;
+            position: relative;
+
+            .burger-btn {
+                pointer-events: initial;
+                cursor: pointer;
+            }
+            .buttons-header {
+                position: relative;
+                flex-direction: column;
+                .top-button {
+                    display: none;
+                }
+            }
+            &:has(.burger-checkbox:checked) {
+                padding-top: 5rem;
+                flex-direction: column;
+                justify-content: center;
+                min-width: calc(100vw - 4rem);
+                height: 100vw;
+                background-color: var(--color-black-70);
+                backdrop-filter: var(--blur-medium);
+                border: 2px solid var(--color-white);
+                text-align: center;
+                ul {
+                    flex-direction: column;
+                    opacity: 1;
+                    transform: translate(0%, 0%);
+                    pointer-events: initial;
+                    font-size: var(--font-size-lg);
+                    gap: 3rem;
+                }
+                .burger-btn {
+                    top: 4rem;
+                    left: 4rem;
+                    color: var(--color-white);
+                    margin-right: 5rem;
+                    .burger-menu-stripes {
+                        color: var(--color-white);
+                    }
+                }
+
+                .top-button,
+                .to-bottom-button {
+                    opacity: 1;
+                    transform: scale(1);
+                    pointer-events: initial;
+                }
+            }
+        }
+    }
     .hero-section {
         article {
             &:first-of-type {
