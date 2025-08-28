@@ -655,59 +655,30 @@ footer {
     font-weight: var(--font-weight-thin);
 }
 
-@media screen and (max-width: 1300px) {
-    header {
-        nav {
-            pointer-events: none;
-            position: relative;
-            flex-direction: column;
-            .burger-btn {
-                pointer-events: initial;
-                cursor: pointer;
-            }
-            .buttons-header {
-                position: relative;
-                flex-direction: column;
-                .top-button {
-                    display: none;
-                }
-            }
-            &:has(.burger-checkbox:checked) {
-                padding-top: 5rem;
-                flex-direction: column;
-                justify-content: center;
-                min-width: calc(100vw - 4rem);
-                height: 100vw;
-                background-color: var(--color-black-70);
-                backdrop-filter: var(--blur-medium);
-                border: 2px solid var(--color-white);
-                text-align: center;
-                ul {
-                    flex-direction: column;
-                    opacity: 1;
-                    transform: translate(0%, 0%);
-                    pointer-events: initial;
-                    font-size: var(--font-size-lg);
-                    gap: 3rem;
-                }
-                .burger-btn {
-                    top: 4rem;
-                    left: 4rem;
-                    color: var(--color-white);
-                    margin-right: 5rem;
-                    .burger-menu-stripes {
-                        color: var(--color-white);
-                    }
-                }
+.to-top-button-mobile {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    z-index: 999;
+    background-color: var(--color-black-50);
+    backdrop-filter: var(--blur-light);
+    border: 1px solid var(--color-white-30);
+    color: var(--color-white);
+    border-radius: var(--border-radius-xl);
+    width: 6rem;
+    height: 6rem;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
 
-                .top-button,
-                .to-bottom-button {
-                    opacity: 1;
-                    transform: scale(1);
-                    pointer-events: initial;
-                }
-            }
-        }
+@media screen and (max-width: 1300px) {
+    .to-top-button-mobile {
+        display: flex;
     }
 
     .hero-section {
@@ -770,6 +741,12 @@ footer {
     }
 }
 @media screen and (max-width: 950px) {
+    header {
+        position: absolute;
+        nav {
+            display: none;
+        }
+    }
     .hero-section {
         flex-direction: column;
         article {
