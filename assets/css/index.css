@@ -676,7 +676,7 @@ footer {
                 padding-top: 5rem;
                 flex-direction: column;
                 justify-content: center;
-                min-width: calc(100vw - 4rem);
+                min-width: calc(100% - 4rem);
                 height: 100vw;
                 background-color: var(--color-black-70);
                 backdrop-filter: var(--blur-medium);
