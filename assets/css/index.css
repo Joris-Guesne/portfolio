@@ -23,6 +23,9 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    .burger-checkbox {
+        display: none;
+    }
     nav {
         border: var(--nav-border) solid transparent;
         min-width: var(--nav-size);
@@ -38,9 +41,7 @@ header {
         align-items: center;
         transition: all var(--timing-cubic-smooth) var(--duration-medium);
         /* Cache le checkbox */
-        .burger-checkbox {
-            display: none;
-        }
+
         .burger-btn {
             pointer-events: none;
             position: absolute;
@@ -676,7 +677,8 @@ footer {
         display: none;
     }
 
-    header nav:has(.burger-checkbox:checked) {
+    /* ✅ Activation via checkbox */
+    header .burger-checkbox:checked ~ nav {
         padding-top: 5rem;
         flex-direction: column;
         justify-content: center;
@@ -688,7 +690,7 @@ footer {
         text-align: center;
     }
 
-    header nav:has(.burger-checkbox:checked) ul {
+    header .burger-checkbox:checked ~ nav ul {
         flex-direction: column;
         opacity: 1;
         transform: translate(0%, 0%);
@@ -697,19 +699,19 @@ footer {
         gap: 3rem;
     }
 
-    header nav:has(.burger-checkbox:checked) .burger-btn {
+    header .burger-checkbox:checked ~ nav .burger-btn {
         top: 4rem;
         left: 4rem;
         color: var(--color-white);
         margin-right: 5rem;
     }
 
-    header nav:has(.burger-checkbox:checked) .burger-btn .burger-menu-stripes {
+    header .burger-checkbox:checked ~ nav .burger-btn .burger-menu-stripes {
         color: var(--color-white);
     }
 
-    header nav:has(.burger-checkbox:checked) .top-button,
-    header nav:has(.burger-checkbox:checked) .to-bottom-button {
+    header .burger-checkbox:checked ~ nav .top-button,
+    header .burger-checkbox:checked ~ nav .to-bottom-button {
         opacity: 1;
         transform: scale(1);
         pointer-events: initial;
