@@ -23,6 +23,10 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    /* Cache le checkbox */
+    .burger-checkbox {
+        display: none;
+    }
     nav {
         border: var(--nav-border) solid transparent;
         min-width: var(--nav-size);
@@ -37,10 +41,7 @@ header {
         justify-content: space-between;
         align-items: center;
         transition: all var(--timing-cubic-smooth) var(--duration-medium);
-        /* Cache le checkbox */
-        .burger-checkbox {
-            display: none;
-        }
+
         .burger-btn {
             pointer-events: none;
             position: absolute;
@@ -672,44 +673,47 @@ footer {
                     display: none;
                 }
             }
-            &:has(.burger-checkbox:checked) {
-                padding-top: 5rem;
-                flex-direction: column;
-                justify-content: center;
-                min-width: calc(100% - 4rem);
-                height: 100vw;
-                background-color: var(--color-black-70);
-                backdrop-filter: var(--blur-medium);
-                border: 2px solid red;
-                text-align: center;
-                ul {
-                    flex-direction: column;
-                    opacity: 1;
-                    transform: translate(0%, 0%);
-                    pointer-events: initial;
-                    font-size: var(--font-size-lg);
-                    gap: 3rem;
-                }
-                .burger-btn {
-                    top: 4rem;
-                    left: 4rem;
-                    color: var(--color-white);
-                    margin-right: 5rem;
-                    .burger-menu-stripes {
-                        color: var(--color-white);
-                    }
-                }
-
-                .top-button,
-                .to-bottom-button {
-                    opacity: 1;
-                    transform: scale(1);
-                    pointer-events: initial;
-                }
-            }
         }
     }
+    /* ✅ Activation via checkbox */
+    header .burger-checkbox:checked ~ nav {
+        padding-top: 5rem;
+        flex-direction: column;
+        justify-content: center;
+        min-width: calc(100vw - 4rem);
+        height: 100vw;
+        background-color: var(--color-black-70);
+        backdrop-filter: var(--blur-medium);
+        border: 2px solid var(--color-white);
+        text-align: center;
+    }
 
+    header .burger-checkbox:checked ~ nav ul {
+        flex-direction: column;
+        opacity: 1;
+        transform: translate(0%, 0%);
+        pointer-events: initial;
+        font-size: var(--font-size-lg);
+        gap: 3rem;
+    }
+
+    header .burger-checkbox:checked ~ nav .burger-btn {
+        top: 4rem;
+        left: 4rem;
+        color: var(--color-white);
+        margin-right: 5rem;
+    }
+
+    header .burger-checkbox:checked ~ nav .burger-btn .burger-menu-stripes {
+        color: var(--color-white);
+    }
+
+    header .burger-checkbox:checked ~ nav .top-button,
+    header .burger-checkbox:checked ~ nav .to-bottom-button {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: initial;
+    }
     .hero-section {
         article {
             &:first-of-type {
