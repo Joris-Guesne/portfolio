@@ -662,13 +662,14 @@ footer {
 
 @media screen and (max-width: 1300px) {
     .burger-checkbox {
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-    }
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+            left: -9999px; /* hors écran */
+        }
     header {
         nav {
-            pointer-events: none;
             position: relative;
             flex-direction: column;
             .burger-btn {
