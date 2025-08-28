@@ -673,41 +673,44 @@ footer {
                 }
             }
         }
-        nav:has(.burger-checkbox:checked) {
-            padding-top: 5rem;
-            flex-direction: column;
-            justify-content: center;
-            min-width: calc(100vw - 4rem);
-            height: 100vw;
-            background-color: var(--color-black-70);
-            backdrop-filter: var(--blur-medium);
-            border: 2px solid var(--color-white);
-            text-align: center;
-            ul {
-                flex-direction: column;
-                opacity: 1;
-                transform: translate(0%, 0%);
-                pointer-events: initial;
-                font-size: var(--font-size-lg);
-                gap: 3rem;
-            }
-            .burger-btn {
-                top: 4rem;
-                left: 4rem;
-                color: var(--color-white);
-                margin-right: 5rem;
-                .burger-menu-stripes {
-                    color: var(--color-white);
-                }
-            }
+    }
+    header nav:has(.burger-checkbox:checked) {
+        padding-top: 5rem;
+        flex-direction: column;
+        justify-content: center;
+        min-width: calc(100vw - 4rem);
+        height: 100vw;
+        background-color: var(--color-black-70);
+        backdrop-filter: var(--blur-medium);
+        border: 2px solid var(--color-white);
+        text-align: center;
+    }
 
-            .top-button,
-            .to-bottom-button {
-                opacity: 1;
-                transform: scale(1);
-                pointer-events: initial;
-            }
-        }
+    header nav:has(.burger-checkbox:checked) ul {
+        flex-direction: column;
+        opacity: 1;
+        transform: translate(0%, 0%);
+        pointer-events: initial;
+        font-size: var(--font-size-lg);
+        gap: 3rem;
+    }
+
+    header nav:has(.burger-checkbox:checked) .burger-btn {
+        top: 4rem;
+        left: 4rem;
+        color: var(--color-white);
+        margin-right: 5rem;
+    }
+
+    header nav:has(.burger-checkbox:checked) .burger-btn .burger-menu-stripes {
+        color: var(--color-white);
+    }
+
+    header nav:has(.burger-checkbox:checked) .top-button,
+    header nav:has(.burger-checkbox:checked) .to-bottom-button {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: initial;
     }
 
     .hero-section {
