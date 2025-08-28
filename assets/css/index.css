@@ -656,24 +656,26 @@ footer {
 }
 
 @media screen and (max-width: 1300px) {
-    header {
-        nav {
-            pointer-events: none;
-            position: relative;
-            flex-direction: column;
-            .burger-btn {
-                pointer-events: initial;
-                cursor: pointer;
-            }
-            .buttons-header {
-                position: relative;
-                flex-direction: column;
-                .top-button {
-                    display: none;
-                }
-            }
-        }
+    header nav {
+        pointer-events: none;
+        position: relative;
+        flex-direction: column;
     }
+
+    header nav .burger-btn {
+        pointer-events: initial;
+        cursor: pointer;
+    }
+
+    header nav .buttons-header {
+        position: relative;
+        flex-direction: column;
+    }
+
+    header nav .buttons-header .top-button {
+        display: none;
+    }
+
     header nav:has(.burger-checkbox:checked) {
         padding-top: 5rem;
         flex-direction: column;
@@ -713,63 +715,62 @@ footer {
         pointer-events: initial;
     }
 
-    .hero-section {
-        article {
-            &:first-of-type {
-                h1 {
-                    font-size: 15rem;
-                }
-            }
-        }
+    .hero-section article:first-of-type h1 {
+        font-size: 15rem;
     }
+
     .quisuisje {
         padding: var(--spacing-lg);
         gap: var(--spacing-lg);
-        aside {
-            .profile-desc {
-                p {
-                    font-size: var(--font-size-md);
-                }
-            }
-        }
     }
+
+    .quisuisje aside .profile-desc p {
+        font-size: var(--font-size-md);
+    }
+
     .mes-derniers-projets {
         padding: var(--spacing-lg);
-        .projet {
-            flex-direction: column;
-            .projet-desc {
-                p {
-                    margin-right: 0;
-                }
-            }
-            .ext-project-links {
-                flex-direction: row;
-                max-height: 200px;
-                a {
-                    .overlay-text {
-                        font-size: var(--font-size-xl);
-                        text-align: center;
-                    }
-                    &:first-of-type {
-                        border-radius: 10rem 0 0 10rem;
-                    }
-                    &:last-of-type {
-                        border-radius: 0 10rem 10rem 0;
-                    }
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        transition: all ease-out 0.2s;
-                    }
-                }
-                &:hover a:not(:hover) {
-                    .overlay-text {
-                        font-size: var(--font-size-sm);
-                    }
-                }
-            }
-        }
+    }
+
+    .mes-derniers-projets .projet {
+        flex-direction: column;
+    }
+
+    .mes-derniers-projets .projet .projet-desc p {
+        margin-right: 0;
+    }
+
+    .mes-derniers-projets .projet .ext-project-links {
+        flex-direction: row;
+        max-height: 200px;
+    }
+
+    .mes-derniers-projets .projet .ext-project-links a .overlay-text {
+        font-size: var(--font-size-xl);
+        text-align: center;
+    }
+
+    .mes-derniers-projets .projet .ext-project-links a:first-of-type {
+        border-radius: 10rem 0 0 10rem;
+    }
+
+    .mes-derniers-projets .projet .ext-project-links a:last-of-type {
+        border-radius: 0 10rem 10rem 0;
+    }
+
+    .mes-derniers-projets .projet .ext-project-links a img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all ease-out 0.2s;
+    }
+
+    .mes-derniers-projets
+        .projet
+        .ext-project-links:hover
+        a:not(:hover)
+        .overlay-text {
+        font-size: var(--font-size-sm);
     }
 }
 @media screen and (max-width: 950px) {
