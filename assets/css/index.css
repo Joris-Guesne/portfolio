@@ -16,17 +16,10 @@ body {
 /* Cache le checkbox */
 .burger-checkbox {
     position: absolute;
-    width: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    border: 0;
-    white-space: nowrap;
-    appearance: none;
-    -webkit-appearance: none; /* iOS Safari */
+    left: -9999px; /* en dehors de l'écran */
+    width: 1px;
+    height: 1px;
+    opacity: 0;
 }
 header {
     display: flex;
