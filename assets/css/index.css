@@ -661,6 +661,12 @@ footer {
 }
 
 @media screen and (max-width: 1300px) {
+    header nav:hover {
+        min-width: initial;
+        max-width: initial;
+        background-color: initial;
+        border: none;
+    }
     .burger-checkbox {
         position: absolute;
         opacity: 0;
