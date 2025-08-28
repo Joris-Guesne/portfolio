@@ -13,14 +13,7 @@ body {
     margin: 0;
     font-size: var(--font-size-sm); /* On remet le body à 18px */
 }
-/* Cache le checkbox */
-.burger-checkbox {
-    position: absolute;
-    left: -9999px; /* en dehors de l'écran */
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-}
+
 header {
     display: flex;
     justify-content: flex-start;
@@ -30,7 +23,6 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-
     nav {
         border: var(--nav-border) solid transparent;
         min-width: var(--nav-size);
@@ -45,7 +37,10 @@ header {
         justify-content: space-between;
         align-items: center;
         transition: all var(--timing-cubic-smooth) var(--duration-medium);
-
+        /* Cache le checkbox */
+        .burger-checkbox {
+            display: none;
+        }
         .burger-btn {
             pointer-events: none;
             position: absolute;
@@ -661,131 +656,117 @@ footer {
 }
 
 @media screen and (max-width: 1300px) {
-    /* Masquer la checkbox hors écran mais la garder cliquable via le label */
-    .burger-checkbox {
-        position: absolute;
-        opacity: 0;
-        width: 1px;
-        height: 1px;
-        left: -9999px;
+    header {
+        nav {
+            pointer-events: none;
+            position: relative;
+            flex-direction: column;
+            .burger-btn {
+                pointer-events: initial;
+                cursor: pointer;
+            }
+            .buttons-header {
+                position: relative;
+                flex-direction: column;
+                .top-button {
+                    display: none;
+                }
+            }
+            &:has(.burger-checkbox:checked) {
+                padding-top: 5rem;
+                flex-direction: column;
+                justify-content: center;
+                min-width: calc(100vw - 4rem);
+                height: 100vw;
+                background-color: var(--color-black-70);
+                backdrop-filter: var(--blur-medium);
+                border: 2px solid var(--color-white);
+                text-align: center;
+                ul {
+                    flex-direction: column;
+                    opacity: 1;
+                    transform: translate(0%, 0%);
+                    pointer-events: initial;
+                    font-size: var(--font-size-lg);
+                    gap: 3rem;
+                }
+                .burger-btn {
+                    top: 4rem;
+                    left: 4rem;
+                    color: var(--color-white);
+                    margin-right: 5rem;
+                    .burger-menu-stripes {
+                        color: var(--color-white);
+                    }
+                }
+
+                .top-button,
+                .to-bottom-button {
+                    opacity: 1;
+                    transform: scale(1);
+                    pointer-events: initial;
+                }
+            }
+        }
     }
 
-    header nav {
-        position: relative;
-        flex-direction: column;
-        background-color: var(--color-black-70);
-        height: 50vh;
-        border: 2px solid var(--color-white); /* bordure par défaut mobile */
+    .hero-section {
+        article {
+            &:first-of-type {
+                h1 {
+                    font-size: 15rem;
+                }
+            }
+        }
     }
-
-    /* Bouton burger visible et cliquable */
-    header nav .burger-btn {
-        pointer-events: initial;
-        cursor: pointer;
-    }
-
-    /* Masquer les boutons et le menu par défaut */
-    header nav .buttons-header,
-    header nav ul {
-        opacity: 0;
-        transform: translate(-100%, 0);
-        pointer-events: none;
-        transition: all var(--timing-ease-out) var(--duration-fast);
-    }
-
-    /* Désactiver hover desktop sur mobile */
-    header nav:hover {
-        all: unset;
-        pointer-events: auto;
-    }
-
-    /* Styles quand le burger est coché */
-    header .burger-checkbox:checked ~ nav {
-        padding-top: 5rem;
-        flex-direction: column;
-        justify-content: center;
-        min-width: calc(100% - 4rem);
-        height: 50vh;
-        background-color: var(--color-black-70);
-        backdrop-filter: var(--blur-medium);
-        border: 2px solid red; /* bordure rouge mobile */
-        text-align: center;
-    }
-
-    header .burger-checkbox:checked ~ nav ul,
-    header .burger-checkbox:checked ~ nav .buttons-header {
-        flex-direction: column;
-        opacity: 1;
-        transform: translate(0, 0);
-        pointer-events: auto;
-        font-size: var(--font-size-lg);
-        gap: 3rem;
-    }
-
-    header .burger-checkbox:checked ~ nav .burger-btn {
-        top: 4rem;
-        left: 4rem;
-        color: var(--color-white);
-        margin-right: 5rem;
-    }
-
-    header .burger-checkbox:checked ~ nav .burger-btn .burger-menu-stripes {
-        color: var(--color-white);
-    }
-
-    header .burger-checkbox:checked ~ nav .top-button,
-    header .burger-checkbox:checked ~ nav .to-bottom-button {
-        opacity: 1;
-        transform: scale(1);
-        pointer-events: auto;
-    }
-
-    /* HERO SECTION adaptation */
-    .hero-section article:first-of-type h1 {
-        font-size: 15rem;
-    }
-
-    /* Section "Qui suis-je" adaptation */
     .quisuisje {
         padding: var(--spacing-lg);
         gap: var(--spacing-lg);
+        aside {
+            .profile-desc {
+                p {
+                    font-size: var(--font-size-md);
+                }
+            }
+        }
     }
-    .quisuisje aside .profile-desc p {
-        font-size: var(--font-size-md);
-    }
-
-    /* Section "Mes derniers projets" adaptation */
     .mes-derniers-projets {
         padding: var(--spacing-lg);
-    }
-    .mes-derniers-projets .projet {
-        flex-direction: column;
-    }
-    .mes-derniers-projets .projet-desc p {
-        margin-right: 0;
-    }
-    .mes-derniers-projets .ext-project-links {
-        flex-direction: row;
-        max-height: 200px;
-    }
-    .mes-derniers-projets .ext-project-links a .overlay-text {
-        font-size: var(--font-size-xl);
-        text-align: center;
-    }
-    .mes-derniers-projets .ext-project-links a:first-of-type {
-        border-radius: 10rem 0 0 10rem;
-    }
-    .mes-derniers-projets .ext-project-links a:last-of-type {
-        border-radius: 0 10rem 10rem 0;
-    }
-    .mes-derniers-projets .ext-project-links a img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: all ease-out 0.2s;
-    }
-    .mes-derniers-projets .ext-project-links:hover a:not(:hover) .overlay-text {
-        font-size: var(--font-size-sm);
+        .projet {
+            flex-direction: column;
+            .projet-desc {
+                p {
+                    margin-right: 0;
+                }
+            }
+            .ext-project-links {
+                flex-direction: row;
+                max-height: 200px;
+                a {
+                    .overlay-text {
+                        font-size: var(--font-size-xl);
+                        text-align: center;
+                    }
+                    &:first-of-type {
+                        border-radius: 10rem 0 0 10rem;
+                    }
+                    &:last-of-type {
+                        border-radius: 0 10rem 10rem 0;
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: all ease-out 0.2s;
+                    }
+                }
+                &:hover a:not(:hover) {
+                    .overlay-text {
+                        font-size: var(--font-size-sm);
+                    }
+                }
+            }
+        }
     }
 }
 @media screen and (max-width: 950px) {
